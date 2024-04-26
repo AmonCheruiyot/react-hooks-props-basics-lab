@@ -8,8 +8,13 @@ const App = () => {
   return (
     <div>
       <nav></nav>
-      <Home data-testid="home" name={user.name} city={user.city} color={user.color} />
-      <About data-testid="about" bio={user.bio} links={user.links} />
+      {/* Adding data-testid attributes to parent divs */}
+      <div data-testid="home-container">
+        <Home name={user.name} city={user.city} color={user.color} />
+      </div>
+      <div data-testid="about-container">
+        <About bio={user.bio} links={user.links} />
+      </div>
       <Links github={user.links.github} linkedin={user.links.linkedin} />
     </div>
   );
