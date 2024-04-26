@@ -1,14 +1,24 @@
-import React from "react";
+import React from 'react';
 
-function About() {
-  return (
-    <div id="about">
-      <h2>About Me</h2>
-      <p>Put the bio in here</p>
-      <img src="https://i.imgur.com/mV8PQxj.gif" alt="I made this" />
-      {/* add your <Links /> component here */}
+const About = ({ bio, links }) => {
+return (
+<div>
+{bio && <p>{bio}</p>}
+{links && (
+  <div>
+    <h4>Links</h4>
+    <ul>
+      <li>
+        <a href={links.github}>GitHub</a>
+      </li>
+      <li>
+        <a href={links.linkedin}>LinkedIn</a>
+      </li>
+    </ul>
+  </div>
+)}
     </div>
   );
-}
+};
 
 export default About;
