@@ -1,21 +1,14 @@
-import React from 'react';
-import Home from './Home';
-import About from './About';
-import Links from './Links';
-import user from '../data/user';
-
-const App = () => {
+import React from "react";
+import NavBar from "./NavBar";
+import Home from "./Home";
+import About from "./About";
+import user from "../data/user";
+function App() {
   return (
     <div>
-      <nav></nav>
-      {/* Adding data-testid attributes to parent divs */}
-      <div data-testid="home-container">
-        <Home name={user.name} city={user.city} color={user.color} />
-      </div>
-      <div data-testid="about-container">
-        <About bio={user.bio} links={user.links} />
-      </div>
-      <Links github={user.links.github} linkedin={user.links.linkedin} />
+      <NavBar />
+      <Home name={user.name} city={user.city} color={user.color} />
+      <About bio={user.bio} About={user.About} />
     </div>
   );
 }
